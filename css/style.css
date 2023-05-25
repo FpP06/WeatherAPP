@@ -58,6 +58,10 @@ main {
     width: 70%;
 }
 
+.weather-info__search-view input:focus {
+    background-color: lightblue;
+}
+
 .weather-info__search-view button {
     padding: 10px 10px;
     border: 2px solid black;
