@@ -1,12 +1,5 @@
+import {getWeatherByCity} from "./apiService.js";
 const viewElements = {};
-
-const onClickSubmit = () => {
-
-}
-
-const onEnterSubmit = () => {
-    
-}
 
 const getDOMElem = (id) => {
     return document.getElementById(id);
@@ -36,6 +29,14 @@ const setupListeners = () => {
 
 }
 
+const onClickSubmit = (event) => {
+}
+
+const onEnterSubmit = (event) => {
+    if(event.key === 'Enter') {
+        getWeatherByCity(viewElements.searchInput.value);
+    }
+}
 
 const init = () => {
     connectHTMLElements();
