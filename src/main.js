@@ -34,7 +34,11 @@ const onClickSubmit = (event) => {
 
 const onEnterSubmit = (event) => {
     if(event.key === 'Enter') {
-        getWeatherByCity(viewElements.searchInput.value);
+        getWeatherByCity(viewElements.searchInput.value).then(data => {
+            console.log("OK")
+            console.log(data.resolvedAddress);
+            console.log(data.currentConditions.temp);
+        });
     }
 }
 
