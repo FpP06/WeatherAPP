@@ -34,7 +34,7 @@ main {
     box-shadow: 0px 0px 20px 25px rgba(88, 60, 60, 0.815);
     transition-duration: .5s;
     transition-property: opacity;
-    opacity: 0.75;
+    opacity: 0.95;
 }
 
 .weather-info__search-view {
@@ -44,6 +44,24 @@ main {
     justify-content: space-between;
     height: 300px;
     text-align: center;
+}
+
+.weather-info__forecast-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-info__forecast-view > *{
+    padding: 5px;
+}
+
+.weather-info__temperatures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .weather-info__search-view label {
@@ -80,7 +98,7 @@ main {
 }
 
 .weather-info__city h1 {
-    font-size: 125%;
+    font-size: 145%;
 }
 
 .weather-info__city img {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +12,9 @@
     <main>
         <section class="weather-info" id="mainContainer">
             <div id="weatherSearchView" class="weather-info__search-view">
-                <label class="weather-info__search__label" for="searchInput">Check weather:</label>
+                <label class="weather-info__search__label" for="searchInput">Sprawdź pogodę:</label>
                 <input type="text" id="searchInput">
-                <button id="searchButton">Search</button>
+                <button id="searchButton">Sprawdź</button>
             </div>
             <div id="weatherForecastView" class="weather-info__forecast-view">
                 <div class="weather-info__city">
@@ -24,11 +24,12 @@
 
                 <div class="weather-info__temperatures">
                     <h2 id="weatherCurrentTemp"></h2>
+                    <p id="pressure"></p>
                     <p id="weatherMaxTemp"></p>
                     <p id="weatherMinTemp"></p>
                 </div>
 
-                <button class="weather-info__btn-return" id="returnToSearchBtn">return</button>
+                <button class="weather-info__btn-return" id="returnToSearchBtn">Powrót</button>
             </div>
         </section>
     </main>
