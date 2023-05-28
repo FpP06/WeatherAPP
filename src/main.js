@@ -26,7 +26,12 @@ const connectHTMLElements = () => {
 const setupListeners = () => {
     viewElements.searchInput.addEventListener('keydown', onEnterSubmit);
     viewElements.searchButton.addEventListener('click', onClickSubmit);
-
+    
+    viewElements.returnToSearchBtn.addEventListener('click', function() {
+        document.querySelector(".weather-info").classList.remove("weather-danger");
+        viewElements.weatherSearchView.style.display = 'flex';
+        viewElements.weatherForecastView.style.display = 'none';
+    });
 }
 
 const onClickSubmit = (event) => {
@@ -47,12 +52,21 @@ const displayWeatherData = (data) => {
     switchView();
     // fadeInOut();
     console.log("OK")
-    console.log(data.resolvedAddress);
-    console.log(data.currentConditions.temp);
-    viewElements.weatherCity.textContent = data.resolvedAddress;
-    viewElements.weatherCurrentTemp.textContent = data.currentConditions.temp;
-    viewElements.weatherMaxTemp.textContent = data.days[0].tempmax;
-    viewElements.weatherMinTemp.textContent = data.days[0].tempmin;
+    if(data !== undefined) {
+        viewElements.weatherCity.textContent = data.resolvedAddress;
+        viewElements.weatherCurrentTemp.innerHTML = `Temperatura: ${data.currentConditions.temp}&degC`;
+        viewElements.weatherIcon.setAttribute('src', `img/${data.currentConditions.icon}.svg`)
+        viewElements.weatherMaxTemp.innerHTML = `Max. temperatura: ${data.days[0].tempmax}&degC`;
+        viewElements.weatherMinTemp.innerHTML = `Min. temperatura: ${data.days[0].tempmin}&degC`;
+    }
+    else {
+        document.querySelector(".weather-info").classList.add("weather-danger");
+        viewElements.weatherCity.textContent = "Nie znaleziono!";
+        viewElements.weatherCurrentTemp.innerHTML = "";
+        viewElements.weatherIcon.setAttribute('src', ``)
+        viewElements.weatherMaxTemp.innerHTML = ``;
+        viewElements.weatherMinTemp.innerHTML = ``;
+    }
 }
 
 const switchView = () => {
