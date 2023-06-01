@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,400;1,500;1,600;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: 'Baloo Thambi 2', cursive;
+    /* font-family: 'Baloo Thambi 2', cursive; */
+    font-family: 'Jost', sans-serif;
     margin: 0;
 }
 
@@ -62,6 +65,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .weather-info__search-view label {
@@ -95,6 +99,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5em;
 }
 
 .weather-info__city h1 {
